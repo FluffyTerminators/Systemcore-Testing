@@ -1,0 +1,29 @@
+package first.robot;
+
+import org.wpilib.driverstation.DefaultUserControls;
+import org.wpilib.opmode.PeriodicOpMode;
+import org.wpilib.opmode.Teleop;
+
+@Teleop
+public class DefaultTeleMode extends PeriodicOpMode {
+  private final Robot robot;
+  private final DefaultUserControls userControls;
+  private double Forward = 0;  
+  private double Strafe = 0;
+  private double Turn = 0;
+
+  public DefaultTeleMode(Robot robot, DefaultUserControls userControls) {
+    this.robot = robot;
+    this.userControls = userControls;
+  }
+
+  @Override
+  public void periodic()
+  {
+    motor0.setThrottle();
+    motor1.setThrottle();
+    motor2.setThrottle();
+    motor3.setThrottle();    
+}
+
+}
